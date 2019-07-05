@@ -1,15 +1,15 @@
 <template>
-    <header class="header header-cover">
+    <div class="header header-cover">
         <div class="header__inner">
             <div class="header__main-row">
                 <div class="header__logo">
                     <span class="header__logo-text">AirRecipes</span>
                 </div>
-                <div class="header__form"><SearchForm></SearchForm></div>
+                <div class="header__form"><SearchForm/></div>
             </div>
             <h1 class="header__page-title">Find the best recipes!</h1>
         </div>
-    </header>
+    </div>
 </template>
 
 <script>
@@ -47,11 +47,12 @@ export default {
     &__logo-text {
         font-family: Rubik;
         font-size: 28px;
-        font-weight: 500;
+        font-weight: 800;
         color: #fff;
     }
     &__main-row {
         padding-top: 16px;
+        display: flex;
     }
     &__page-title {
         display: inline-flex;
@@ -61,6 +62,9 @@ export default {
         font-weight: 300;     
         color: #fff;
         margin: 49px 0 46px 0;
+    }
+    &__form {
+        margin-left: auto;
     }
 }
 </style>

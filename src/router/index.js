@@ -10,7 +10,8 @@ export default new Router({
       component: () => import("@/views/Home")
     },
     {
-      path: "/detail/@:post_id",
+      name: 'detail',
+      path: "/detail/:post_id",
       component: () => import("@/views/DetailPage")
     }
   ]
