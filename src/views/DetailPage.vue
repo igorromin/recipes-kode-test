@@ -20,7 +20,7 @@ import RecipeMeta from "@/components/RecipeMeta.vue";
 import CardList from "@/components/CardList.vue";
 import SliderBlock from "@/components/SliderBlock.vue";
 
-import {MAIN_URL} from "@/store/index.js";
+import NetworkService from '@/store/NetworkService.js';
 
 export default {
   name: "DetailPage",
@@ -37,15 +37,12 @@ export default {
   },
   methods: {
     fetchRecipe() {
-        let global_view = this;
-        fetch(MAIN_URL + 'detail_' + global_view.post_id + '.json')
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(rsp) {
-          global_view.recipe = rsp.recipe;
+        let global_view = this; 
+        NetworkService.getRecipe(global_view.post_id)
+        .then(data => {
+          global_view.recipe = data.recipe;
           global_view.isReady = true;
-        });       
+        })       
     },
   }
 };

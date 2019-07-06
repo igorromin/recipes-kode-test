@@ -10,7 +10,7 @@
 
 <script>
 import RecipePreview from "@/components/RecipePreview.vue";
-import {MAIN_URL} from "@/store/index.js";
+import NetworkService from '@/store/NetworkService.js';
 export default {
   name: 'RecipesList',
   components: {RecipePreview},
@@ -26,14 +26,11 @@ export default {
   methods: {
     fetchRecipes() {
         let global_view = this; 
-        fetch(MAIN_URL + 'list.json')
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(rsp) {
-          global_view.recipes = rsp.recipes;
+        NetworkService.getRecipes()
+        .then(data => {
+          global_view.recipes = data.recipes;
           global_view.isReady = true;
-        });
+        })       
     },
   }
 }

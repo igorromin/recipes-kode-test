@@ -13,7 +13,7 @@
                 </div>
                 <div class="item-card__actions">
                     <div class="item-card__actions__link">
-                        Read More  <span class="item-card__actions__link__icon"><m-icon slot="icon" icon="arrow_forward"/></span>
+                        Read More  <span class="item-card__actions__link__icon"><font-awesome-icon slot="icon" :icon="arrowIcon" /></span>
                     </div>
                 </div>
             </m-card>
@@ -22,15 +22,13 @@
 </template>
 
 <script>
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import Vue from "vue";
 import Card from 'material-components-vue/dist/card';
-import Typo from 'material-components-vue/dist/typography';
-import Icon from 'material-components-vue/dist/icon';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 Vue.use(Card);
-Vue.use(Typo);
-Vue.use(Icon);
+
 
 export default {
     name: 'RecipePreview',
@@ -38,15 +36,21 @@ export default {
         recipe: { type: Object, required: true }
     },
     computed: {
-    recipeLink() {
+        recipeLink() {
+            return {
+                name: "detail",
+                params: {
+                    post_id: this.recipe.id
+                }
+            };
+        }
+    },
+    data: function () {
         return {
-            name: "detail",
-            params: {
-                post_id: this.recipe.id
-            }
-        };
-    }
-  }
+            arrowIcon: faChevronRight,
+        }
+    },
+    components: {FontAwesomeIcon},
 }
 </script>
 
@@ -94,11 +98,10 @@ export default {
                 color: $main-color;
                 text-decoration: none;
                 font-size: 21px;
-                display: block;
+                display: flex;
                 &__icon {
-                    display: inline-block;
-                    vertical-align: middle;
-                    transition: all .3s;              
+                    transition: all .3s;
+                    margin-left: 5px;          
                 }               
                 &:hover &__icon {
                     margin-left: 10px;

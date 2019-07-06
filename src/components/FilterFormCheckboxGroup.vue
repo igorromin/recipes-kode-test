@@ -54,6 +54,8 @@ export default {
                 width: 100%;
                 color: #000;
                 padding: 10px 0;
+                outline: none;
+                cursor: pointer;
                 &__icon {
                     margin-left: auto;
                     transition: transform .3s;
@@ -70,7 +72,6 @@ export default {
             overflow: hidden;
             &__active {
                 height: 100%;
-                overflow: auto;
             }
         }
     }

@@ -102,7 +102,7 @@ export default {
     .filter__popup {
         position: fixed;
         @media (--desktop) {
-            top: 300px;
+            top: 200px;
             margin-left: calc(#{$main-lg-width} - 490px);
         }
         z-index: 9;

@@ -1,1 +1,0 @@
-export const MAIN_URL = 'https://test.kode-t.ru/';
