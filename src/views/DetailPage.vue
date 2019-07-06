@@ -20,7 +20,7 @@ import RecipeMeta from "@/components/RecipeMeta.vue";
 import CardList from "@/components/CardList.vue";
 import SliderBlock from "@/components/SliderBlock.vue";
 
-import {recipe as RecipeData} from "@/store/index.js";
+import {MAIN_URL} from "@/store/index.js";
 
 export default {
   name: "DetailPage",
@@ -31,13 +31,21 @@ export default {
         isReady: false
     }
   },
+  props: ['post_id'],
   mounted() {
     this.fetchRecipe();
   },
   methods: {
     fetchRecipe() {
-        this.recipe = RecipeData.recipe;
-        this.isReady = true;
+        let global_view = this;
+        fetch(MAIN_URL + 'detail_' + global_view.post_id + '.json')
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(rsp) {
+          global_view.recipe = rsp.recipe;
+          global_view.isReady = true;
+        });       
     },
   }
 };
@@ -48,10 +56,18 @@ export default {
 
 .detail-page {
   &__inner {
-    width: $(main-lg-width);
     margin: 0 auto;
     margin-top: 30px;
     justify-content: center;
+    @media (--desktop) {
+      width: $(main-lg-width);
+    }
+    @media (--tablet-ls) {           
+      width: $(main-tablet-ls-width);
+    }
+    @media (--tablet-pr) {
+      padding: 0 28px;
+    }
     &__text-blocks {
       margin-top: 27px;
       display: flex;

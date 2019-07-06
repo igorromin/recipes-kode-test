@@ -2,3 +2,21 @@ $main-lg-width: 1043px;
 $main-color: #fd9727;
 $text-color-dark: #1f1f1f;
 $text-color-lightdark: #9e9e9e;
+
+/*Responsive breakpoints*/
+$tablet-screen: 768px;
+$desktop-screen: 1599px;
+
+
+@mixin mobile {
+    @media (max-width: #{$tablet-screen - 1}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin tablet {
+    @media (min-width: #{$tablet-screen + 1}) and (max-width: #{$desktop-screen}) {
+        @content;
+    }
+ }

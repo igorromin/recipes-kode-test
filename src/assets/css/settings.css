@@ -1,7 +1,16 @@
 $main-lg-width: 1043px;
+$main-tablet-ls-width: 844px;
+$main-tablet-pr-width: 590px;
 $main-color: #fd9727;
 $text-color-dark: #1f1f1f;
 $text-color-lightdark: #9e9e9e;
+
+/*Responsive breakpoints*/
+@custom-media --mobile (max-width: 766px);
+@custom-media --tablet (min-width: 767px) and (max-width: 1599px);
+@custom-media --tablet-pr (min-width: 767px) and (max-width: 843px);
+@custom-media --tablet-ls (min-width: 844px) and (max-width: 1599px);
+@custom-media --desktop (min-width: 1599px);
 
 /* lato-300 - latin */
 @font-face {

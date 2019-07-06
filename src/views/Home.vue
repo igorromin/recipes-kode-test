@@ -28,15 +28,41 @@ export default {
 <style>
 @import '../assets/css/settings.css';
 .workspace {
-    &__inner {
-        width: $(main-lg-width);
+    &__inner {    
         margin: 0 auto;
         justify-content: center;
-
+        @media (--tablet-pr) {           
+            width: $(main-tablet-pr-width);
+        }
+        @media (--tablet-ls) {           
+            width: $(main-tablet-ls-width);
+        }
+        @media (--desktop) {           
+            width: $(main-lg-width);
+        }
         &__list {
             margin-top: 34px;
+            @media (--tablet-pr) {           
+                padding: 0 10px;
+            }
+            @media (--mobile) {     
+                margin-top: 0;
+            }
         }
     }
+}
+.header {
+    &__inner {
+        @media (--tablet-pr) {           
+            width: $(main-tablet-pr-width);
+        }  
+    }
+    &__main-row {
+        padding: 16px 0;
+        @media (--mobile) {           
+            padding: 16px;
+        }  
+    }   
 }
 
 </style>

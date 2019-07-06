@@ -27,9 +27,12 @@ export default {
 <style>
     @import '../assets/css/settings.css';
     .card-list {
-        margin-bottom: 37px;
-        width: 792px;
+        margin-bottom: 37px;        
         font-family: 'Lato';
+        width: 100%;
+        @media (--desktop) {
+            width: 792px;
+        }
         &__headline {
             font-size: 24px;
             font-weight: bold;

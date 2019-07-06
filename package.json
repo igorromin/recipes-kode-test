@@ -12,8 +12,10 @@
     "@fortawesome/free-regular-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
+    "autoprefixer": "^9.6.1",
     "core-js": "^2.6.5",
     "material-components-vue": "^1.1.0",
+    "postcss-cli": "^6.1.2",
     "postcss-nested": "^4.1.2",
     "vue": "^2.6.10",
     "vue-agile": "^1.0.11",
@@ -30,6 +32,8 @@
     "material-design-icons-iconfont": "^5.0.1",
     "node-sass": "^4.12.0",
     "postcss-advanced-variables": "^3.0.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-flexibility": "^2.0.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10",
@@ -53,7 +57,10 @@
     "plugins": {
       "postcss-nested": {},
       "postcss-advanced-variables": {},
-      "postcss-assets": false
+      "postcss-assets": false,
+      "postcss-custom-media": {},
+      "autoprefixer": {},
+      "postcss-flexibility": {}
     }
   },
   "browserslist": [

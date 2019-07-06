@@ -44,6 +44,15 @@ export default {
             height: 500px;
             object-fit: cover;
             width: 100%;
+            @media (--mobile) {
+                height: 100%;
+            } 
+            & img {
+                @media (--mobile) {
+                   width: 100%;
+                   height: 100%;
+                }
+            }
         }
     }
     .agile {
@@ -56,7 +65,12 @@ export default {
             position: absolute;
             transition-duration: .3s;
             top: 50%;
-            transform: translate(-50%,-50%);        
+            transform: translate(-50%,-50%);
+            & svg {
+                @media (--mobile) {
+                   width: 14px;
+                }
+            }
             &:disabled {
                 opacity: 0;
             }
@@ -65,10 +79,16 @@ export default {
             }
             &--prev {
                 left: 60px;
-                transform: translate(-50%,-50%) scale(-1, 1);        
+                transform: translate(-50%,-50%) scale(-1, 1);
+                @media (--mobile) {
+                   left: 23px;
+                }   
             }
             &--next {
                 right: 60px;
+                @media (--mobile) {
+                   right: -13px;
+                }
             }
         }
         &__dots {

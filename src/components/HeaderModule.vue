@@ -40,10 +40,10 @@ export default {
                 this.expand = false;
                 this.scrolled = true;
             }             
-            if (this.lastPosition > window.scrollY) {
+            if (this.lastPosition > window.scrollY && this.limitPosition > window.scrollY) {
                 this.expand = true;
                 this.scrolled = false;
-            }          
+            }
             this.lastPosition = window.scrollY;
         }
     },
@@ -74,13 +74,22 @@ export default {
 }
 
 .header {
-    transition: background .7s;
+    transition: background 1s;
     &:not(&-cover) {
         background: $(main-color);
     }
     &-cover {
         background-image: linear-gradient(to top, rgba(0, 0, 0, 0), #212121), url('~@/assets/img/header_cover.png');
         background-size: cover;
+        @media (--tablet) { 
+            background-position: center;
+        }
+        @media (--mobile) { 
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0), #212121), url('~@/assets/img/header_cover_full.jpg');
+            background-position: 42% 0;
+            background-size: 169% 169%;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+        }
     }
     &-sticy {
         width: 100%;
@@ -88,17 +97,22 @@ export default {
         margin: 0 auto;
         z-index: 9;
         top: 0;
-        & ~ div {
+        /*& ~ div {
             margin-top: 214px;
-        }
+        }*/
     }
     &__link {
         text-decoration: none;
     }
     &__inner {
-        width: $(main-lg-width);
         margin: 0 auto;
         justify-content: center;
+        @media (--desktop) {           
+            width: $(main-lg-width);
+        }
+        @media (--tablet-ls) {           
+            width: $(main-tablet-ls-width);
+        }
     }
     &__logo-text {
         font-family: Rubik;
@@ -107,10 +121,19 @@ export default {
         color: #fff;
     }
     &__main-row {
-        padding-top: 16px;
         display: flex;
         height: 64px;
         box-sizing: border-box;
+        align-items: center;
+        @media (--mobile) {
+            padding: 16px;
+        }
+        @media (--tablet-pr) {
+            padding: 16px 68px;
+        }
+        @media (--tablet-ls) {
+            padding: 16px;
+        }
     }
     &__page-title {
         display: inline-flex;
@@ -120,6 +143,9 @@ export default {
         font-weight: 300;     
         color: #fff;
         margin: 49px 0 46px 0;
+        @media (--mobile) {           
+            padding: 0 16px;
+        }
     }
     &__form {
         margin-left: auto;

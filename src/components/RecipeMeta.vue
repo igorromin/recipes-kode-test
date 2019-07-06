@@ -47,7 +47,11 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;        
+        flex-direction: column;
+        @media (--mobile) {
+            padding: 0 16px;
+        }
+        
         &__headline__small {
             color: $(text-color-lightdark);
             font-family: 'Lato';
@@ -65,6 +69,13 @@ export default {
             font-weight: 600;
             display: block;
             margin-top: -9px;
+            text-align: center;
+            @media (--mobile) {
+                margin-top: 0px;
+            }
+            @media (--tablet) {
+                margin-top: -5px;
+            }
         }
         &__icons-block {
             display: flex;
@@ -72,6 +83,9 @@ export default {
             justify-content: space-between;
             margin-top: 16px;
             color: $(text-color-lightdark);
+            @media (--mobile) {
+                width: 100%;
+            }
             &__icon {           
                 &__first-uppercase {
                     text-transform: capitalize;

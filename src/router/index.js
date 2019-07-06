@@ -13,6 +13,7 @@ export default new Router({
         {
             name: 'detail',
             path: "/detail/:post_id",
+            props: true,
             component: () => import("@/views/DetailPage")
         }
     ]
