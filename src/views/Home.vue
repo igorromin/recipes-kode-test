@@ -1,6 +1,6 @@
 <template>
     <div class="home-page">
-      <StickyImageHeader></StickyImageHeader>
+      <HeaderModule :full="true"/>
       <div class="workspace">
         <div class="workspace__inner">
             <div class="workspace__inner__form">
@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import StickyImageHeader from "@/components/StickyImageHeader.vue";
+import HeaderModule from "@/components/HeaderModule.vue";
 import FilterForm from "@/components/FilterForm.vue";
 import RecipesList from "@/components/RecipesList.vue";
 
 export default {
   name: "home",
-  components: {StickyImageHeader, FilterForm, RecipesList}
+  components: {HeaderModule, FilterForm, RecipesList}
 };
 </script>
 

@@ -38,7 +38,7 @@ export default {
   }
   .input-transparent {
     @include mdc-text-field-shape-radius(0, false);     
-    @include mdc-text-field-bottom-line-color(#adadad);
+    @include mdc-text-field-bottom-line-color(#fff);
     @include mdc-text-field-hover-bottom-line-color(#adadad)
     @include mdc-text-field-ink-color(#fff);
     @include mdc-text-field-fill-color(rgba(0,0,0,0));

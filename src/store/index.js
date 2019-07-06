@@ -86,3 +86,38 @@ export const recipes = {
 		}
 	]
 };
+export const recipe = {
+	"recipe": {
+		"id": 1,
+		"title": "Parmesan Chicken Cutlets",
+		"description": "Such a simple, yet great recipe",
+		"caloricity": 450,
+		"thumbnail": "http://img.sndimg.com/food/image/upload/w_450,c_fit/v1/img/recipes/18/53/42/qh75rY6tQmGTP0ytQcuD_Parmesan-Chicken-Cutlets-2.png",
+		"images": [
+			"http://img.sndimg.com/food/image/upload/w_1280,c_fit/v1/img/recipes/16/72/02/wivjoc8JSuKPdeNfC2tL_chicken%20pot%20pie%203.jpg",
+			"http://img.sndimg.com/food/image/upload/w_1280,c_fit/v1/img/recipes/16/72/02/pics8lTlP.jpg"
+		],
+		"cuisine": {
+			"id": 1,
+			"title": "Caribbean"
+		},
+		"cookTime": 2100,
+		"difficulty": "easy",
+		"ingredients": [
+			"1/4 cup parmesan cheese, grated",
+			"2 tablespoons dried Italian seasoned breadcrumbs",
+			"1/8 teaspoon paprika",
+			"1 teaspoon dried parsley",
+			"1/2 teaspoon garlic powder",
+			"1/4 teaspoon fresh ground pepper",
+			"4 (1/4 lb) boneless skinless chicken breast"
+		],
+		"instructions": [
+			"Preheat oven to 400 degrees",
+			"In resealable plastic bag, combine cheese, crumbs and all seasonings; shake well",
+			"Transfer mixture to plate; dip each chicken breast in cheese mixture, turning to coat all sides",
+			"Arrange on nonstick baking sheet",
+			"Bake until chicken is cooked through, 20-25 minutes"
+		]
+	}
+};

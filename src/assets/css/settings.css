@@ -1,6 +1,7 @@
-$main-lg-width: 1044px;
+$main-lg-width: 1043px;
 $main-color: #fd9727;
 $text-color-dark: #1f1f1f;
+$text-color-lightdark: #9e9e9e;
 
 /* lato-300 - latin */
 @font-face {

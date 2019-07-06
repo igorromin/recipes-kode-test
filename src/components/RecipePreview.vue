@@ -31,18 +31,18 @@ Vue.use(Typo);
 Vue.use(Icon);
 
 export default {
-  name: 'RecipePreview',
-  props: {
-    recipe: { type: Object, required: true }
-  },
-  computed: {
+    name: 'RecipePreview',
+    props: {
+        recipe: { type: Object, required: true }
+    },
+    computed: {
     recipeLink() {
-      return {
-        name: "detail",
-        params: {
-          post_id: this.recipe.id
-        }
-      };
+        return {
+            name: "detail",
+            params: {
+                post_id: this.recipe.id
+            }
+        };
     }
   }
 }
